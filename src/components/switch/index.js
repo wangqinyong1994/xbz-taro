@@ -50,7 +50,7 @@ AtSwitch.defaultProps = {
   customStyle: '',
   className: '',
   title: '',
-  color: '#6190e8',
+  color: '#DD3740',
   border: true,
   disabled: false,
   checked: false,

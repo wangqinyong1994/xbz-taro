@@ -5,24 +5,22 @@ import './app.scss'
 class App extends Component {
   config = {
     pages: [
-      'pages/basic/button/index',
-      'pages/view/load-more/index',
-      'pages/view/swiper/index',
-      'pages/view/timeline/index',
-      'pages/view/article/index',
-      'pages/view/avatar/index',
-      'pages/view/tag/index',
-      'pages/view/badge/index',
-      'pages/view/noticebar/index',
-      'pages/basic/typo/index',
-      'pages/basic/color/index',
-      'pages/basic/icon/index',
-      'pages/panel/index',
 
       'pages/index/index',
-
-
       'pages/view/divider/index',
+      'pages/panel/index',
+      'pages/basic/icon/index',
+      'pages/basic/color/index',
+      'pages/basic/typo/index',
+      'pages/view/noticebar/index',
+      'pages/view/badge/index',
+      'pages/view/tag/index',
+      'pages/view/avatar/index',
+      'pages/view/article/index',
+      'pages/view/timeline/index',
+      'pages/view/load-more/index',
+      'pages/view/swiper/index',
+      'pages/basic/button/index',
       'pages/view/countdown/index',
       'pages/view/steps/index',
       'pages/view/curtain/index',

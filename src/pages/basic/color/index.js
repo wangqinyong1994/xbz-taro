@@ -24,7 +24,7 @@ export default class BasicColor extends Taro.Component {
             },
             {
               name: '品牌蓝',
-              hex: '#6190E8'
+              hex: '#DD3740'
             },
             {
               name: '深蓝色',

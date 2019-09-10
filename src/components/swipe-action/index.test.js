@@ -13,7 +13,7 @@ const OPTIONS = [
     text: '取消',
     className: 'cancel',
     style: {
-      backgroundColor: '#6190E8'
+      backgroundColor: '#DD3740'
     }
   },
   {

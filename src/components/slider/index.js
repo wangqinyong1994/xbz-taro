@@ -99,7 +99,7 @@ AtSlider.defaultProps = {
   step: 1,
   value: 0,
   disabled: false,
-  activeColor: '#6190e8',
+  activeColor: '#DD3740',
   backgroundColor: '#e9e9e9',
   blockSize: 28,
   blockColor: '#ffffff',

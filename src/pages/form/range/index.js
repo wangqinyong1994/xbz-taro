@@ -53,7 +53,7 @@ export default class Index extends Taro.Component {
                 数值范围：{this.state.value2[0]}~{this.state.value2[1]}
               </View>
               <AtRange
-                sliderStyle={{ backgroundColor: '#6190E8' }}
+                sliderStyle={{ backgroundColor: '#DD3740' }}
                 value={this.state.value2}
                 onChange={this.handleChange.bind(this, 'value2')}
               />
