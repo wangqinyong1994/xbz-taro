@@ -1,7 +1,6 @@
 import Taro from '@tarojs/taro'
 import { View, Form, Text } from '@tarojs/components'
 import { AtButton, AtForm, AtFab } from 'taro-ui'
-import ShareCanvas from '../../../components/shareCanvas/index'
 import DocsHeader from '../../components/doc-header'
 import './index.scss'
 
@@ -52,7 +51,6 @@ export default class ButtonPage extends Taro.Component {
     return (
       <View className='page'>
         {/* S Header */}
-        <ShareCanvas visible />
         <DocsHeader title='Button 按钮'></DocsHeader>
         {/* E Header */}
         {/* S Body */}

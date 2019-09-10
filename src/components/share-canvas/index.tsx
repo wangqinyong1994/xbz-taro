@@ -8,7 +8,7 @@ import shareCir from '../../assets/images/shareCir.png';
 import './index.scss';
 
 interface ComponentProps {
-  title?: String;
+  title?: string;
   children?: any;
   visible: boolean;
   close?: () => void;
@@ -19,7 +19,7 @@ interface ComponentProps {
 
 interface ComponentState {}
 
-class ShareCanvas extends Component<ComponentProps, ComponentState> {
+export default class ShareCanvas extends Component<ComponentProps, ComponentState> {
   constructor(props) {
     super(props);
   }
@@ -87,4 +87,3 @@ class ShareCanvas extends Component<ComponentProps, ComponentState> {
   }
 }
 
-export default ShareCanvas;

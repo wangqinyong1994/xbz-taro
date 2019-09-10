@@ -48,6 +48,7 @@ export { default as AtImagePicker } from './image-picker'
 export { default as AtIndexes } from './indexes'
 export { default as AtRange } from './range'
 export { default as AtFloatButton } from './float-button'
+export { default as ShareCanvas } from './share-canvas'
 
 export declare const AtCalendar: ComponentClass<Props>
 
