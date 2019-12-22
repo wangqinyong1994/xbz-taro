@@ -10,14 +10,24 @@ export interface Props {
   maxDate?: Calendar.DateArg
 
   hideArrow: boolean
+  hideTime: boolean;
+  time: string;
+  timeStep: number;
 
   monthFormat: string
+  collapse: boolean
+  selectedDate: Calendar.SelectedDate
+  renderExtra?: JSX.Element;
 
   onPreMonth: () => void
 
   onNextMonth: () => void
 
   onSelectDate: (e: BaseEvent) => void
+
+  onSelectTime: (e:string) => void
 }
 
-export interface State {}
+export interface State {
+  timeIndex: number[]
+}

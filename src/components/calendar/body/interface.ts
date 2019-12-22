@@ -5,8 +5,6 @@ export type ListGroup = Array<Calendar.ListInfo<Calendar.Item>>
 export interface Props {
   format: string
 
-  validDates: Array<Calendar.ValidDate>
-
   marks: Array<Calendar.Mark>
 
   isSwiper: boolean
@@ -28,6 +26,7 @@ export interface Props {
   onSwipeMonth: (vectorCount: number) => void
 
   onLongClick: (item: Calendar.Item) => void
+  collapse: boolean;
 }
 
 export interface State {

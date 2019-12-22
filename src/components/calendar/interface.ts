@@ -3,8 +3,6 @@ import Calendar from './types'
 export interface PropsBase {
   format?: string
 
-  validDates?: Array<Calendar.ValidDate>
-
   minDate?: Calendar.DateArg
 
   maxDate?: Calendar.DateArg
@@ -16,6 +14,10 @@ export interface PropsBase {
   monthFormat?: string
 
   hideArrow?: boolean
+  hideTime?: boolean;
+  time?: string
+
+  timeStep?: number;
 
   isVertical?: boolean
 
@@ -25,13 +27,20 @@ export interface PropsBase {
 
   onClickNextMonth?: () => void
 
-  onSelectDate?: (item: { value: Calendar.SelectedDate }) => void
+  onSelectDate?: (item: { value: Calendar.SelectedDate, time: string }, ) => void
 
   onDayClick?: (item: { value: string }) => void
 
   onDayLongClick?: (item: { value: string }) => void
 
   onMonthChange?: (value: string) => void
+
+  onTimeChange?: (value: string) => void
+  collapse?: boolean
+
+  collapsible? :boolean;
+  
+  renderExtra?: JSX.Element;
 }
 
 export interface SingleSelectedProps extends PropsBase {
@@ -53,8 +62,6 @@ export interface DefaultProps {
 
   isSwiper: boolean
 
-  validDates: Array<Calendar.ValidDate>
-
   marks: Array<Calendar.Mark>
 
   currentDate: Calendar.DateArg | Calendar.SelectedDate
@@ -62,18 +69,28 @@ export interface DefaultProps {
   monthFormat: string
 
   hideArrow: boolean
+  hideTime: boolean;
+
+  time: string;
+  timeStep: number;
 
   isVertical: boolean
 
   isMultiSelect: boolean
 
   selectedDates: Array<Calendar.SelectedDate>
+  collapse: boolean;
+  collapsible: boolean;
+
+  collapseBtn: boolean;
 }
 
 export interface State {
   generateDate: number
 
   selectedDate: Calendar.SelectedDate
+  time: string
+  collapse: boolean;
 }
 
 export type PropsWithDefaults = Props & DefaultProps

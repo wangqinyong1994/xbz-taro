@@ -1,7 +1,8 @@
 import bind from 'bind-decorator'
 
 import Taro, { Component, Config } from '@tarojs/taro'
-import { View } from '@tarojs/components'
+import { View, Button } from '@tarojs/components'
+import dayjs from 'dayjs';
 
 import AtButton from '../../../components/button/index'
 
@@ -22,23 +23,18 @@ export default class Index extends Component {
     multiCurentDate: {
       start: Date.now()
     },
+    hideTime: true,
+    currentDate: dayjs().format('YYYY-MM-DD'),
+    collapse: true,
     mark: [
       {
-        value: '2018/11/11'
-      }
-    ],
-    validDates: [
-      {
-        value: '2019/04/17'
+        value: '2019/12/21'
       },
       {
-        value: '2019/04/21'
+        value: '2019/12/22'
       },
       {
-        value: '2019/05/04'
-      },
-      {
-        value: '2019/05/28'
+        value: '2018/09/03'
       }
     ]
   }
@@ -79,9 +75,18 @@ export default class Index extends Component {
   handleMonthChange (arg) {
     console.log('handleMonthChange', arg)
   }
+  handleCollapse() {
+    this.setState({
+      collapse: !this.state.collapse,
+      // hideTime: !this.state.hideTime,
+    })
+  }
+  handleSelectDate(e) {
+    console.log("handleSelectDate", e)
+  }
 
   render () {
-    const { now, minDate, maxDate, mark, multiCurentDate, validDates } = this.state
+    const { now, minDate, maxDate, mark, multiCurentDate, collapse, currentDate, hideTime } = this.state
     return (
       <View className='page calendar-page'>
         <DocsHeader title='Calendar 日历' />
@@ -90,12 +95,14 @@ export default class Index extends Component {
           <View className='panel'>
             <View className='panel__title'>一般案例</View>
             <View className='panel__content'>
-              <AtCalendar onMonthChange={this.handleMonthChange} />
+              <AtCalendar collapse={collapse} onSelectDate={this.handleSelectDate} onMonthChange={this.handleMonthChange} currentDate={currentDate} marks={mark} hideTime={hideTime} time="06:30"  renderExtra={<View>343434</View>} />
             </View>
+            <Button onClick={this.handleCollapse.bind(this)}>{!collapse ? '折叠' : '展开'}</Button>
           </View>
-
-          <View className='panel'>
-            <View className='panel__title'>跳转到指定日期</View>
+          {/* skb985J8LEmj5VPyu3N+9J+8suw= */}
+          {/* <View className='panel'>
+            <View className='panel__title'>跳转到指
+            定日期</View>
             <View className='panel__content'>
               <AtCalendar currentDate={now} />
               <View className='body_controllers'>
@@ -128,9 +135,9 @@ export default class Index extends Component {
                 </AtButton>
                 <AtButton
                   size='small'
-                  onClick={this.handleClick.bind(this, 'maxDate', '2019/12/31')}
+                  onClick={this.handleClick.bind(this, 'maxDate', '2018/12/31')}
                 >
-                  设置最大值 2019/12/31
+                  设置最大值 2018/12/31
                 </AtButton>
               </View>
             </View>
@@ -191,15 +198,8 @@ export default class Index extends Component {
                 </AtButton>
               </View>
             </View>
-          </View>
-
-          <View className='panel'>
-            <View className='panel__title'>有效时间组</View>
-            <View className='panel__content'>
-              <AtCalendar validDates={validDates}/>
-            </View>
-          </View>
-        </View>
+          </View>*/}
+        </View> 
       </View>
     )
   }
