@@ -1,20 +1,20 @@
-import bind from 'bind-decorator'
+import bind from 'bind-decorator';
 
-import Taro, { Component, Config } from '@tarojs/taro'
-import { View, Button } from '@tarojs/components'
+import Taro, { Component, Config } from '@tarojs/taro';
+import { View, Button } from '@tarojs/components';
 import dayjs from 'dayjs';
 
-import AtButton from '../../../components/button/index'
+import AtButton from '../../../components/button/index';
 
-import './index.scss'
+import './index.scss';
 
-import DocsHeader from '../../components/doc-header'
-import AtCalendar from '../../../components/calendar/index'
+import DocsHeader from '../../components/doc-header';
+import AtCalendar from '../../../components/calendar/index';
 
 export default class Index extends Component {
   config: Config = {
     navigationBarTitleText: 'Taro日历组件展示'
-  }
+  };
 
   state = {
     now: Date.now(),
@@ -28,76 +28,99 @@ export default class Index extends Component {
     collapse: true,
     mark: [
       {
-        value: '2019/12/21'
+        value: '2019/12/21',
+        normal: true,
       },
       {
-        value: '2019/12/22'
+        value: '2019/12/22',
+        normal: false,
       },
       {
-        value: '2018/09/03'
+        value: '2018/09/03',
+        normal: true,
       }
     ]
-  }
+  };
 
-  componentWillMount () {}
+  componentWillMount() {}
 
-  componentDidMount () {}
+  componentDidMount() {}
 
-  componentWillUnmount () {}
+  componentWillUnmount() {}
 
-  componentDidShow () {}
+  componentDidShow() {}
 
-  componentDidHide () {}
+  componentDidHide() {}
 
   @bind
-  handleClick (key: string, value: string) {
+  handleClick(key: string, value: string) {
     this.setState({
       [key]: value
-    })
+    });
   }
 
   @bind
-  handleDayClick (...arg) {
-    console.log('handleDayClick', arg)
+  handleDayClick(...arg) {
+    console.log('handleDayClick', arg);
   }
 
   @bind
-  handleDayLongClick (...arg) {
-    console.log('handleDayLongClick', arg)
+  handleDayLongClick(...arg) {
+    console.log('handleDayLongClick', arg);
   }
 
   @bind
-  handleDateChange (arg) {
-    console.log('handleDateChange', arg)
+  handleDateChange(arg) {
+    console.log('handleDateChange', arg);
   }
 
   @bind
-  handleMonthChange (arg) {
-    console.log('handleMonthChange', arg)
+  handleMonthChange(arg) {
+    console.log('handleMonthChange', arg);
   }
   handleCollapse() {
     this.setState({
-      collapse: !this.state.collapse,
+      collapse: !this.state.collapse
       // hideTime: !this.state.hideTime,
-    })
+    });
   }
   handleSelectDate(e) {
-    console.log("handleSelectDate", e)
+    console.log('handleSelectDate', e);
   }
 
-  render () {
-    const { now, minDate, maxDate, mark, multiCurentDate, collapse, currentDate, hideTime } = this.state
+  render() {
+    const {
+      now,
+      minDate,
+      maxDate,
+      mark,
+      multiCurentDate,
+      collapse,
+      currentDate,
+      hideTime
+    } = this.state;
     return (
-      <View className='page calendar-page'>
-        <DocsHeader title='Calendar 日历' />
+      <View className="page calendar-page">
+        <DocsHeader title="Calendar 日历" />
 
-        <View className='doc-body'>
-          <View className='panel'>
-            <View className='panel__title'>一般案例</View>
-            <View className='panel__content'>
-              <AtCalendar collapse={collapse} onSelectDate={this.handleSelectDate} onMonthChange={this.handleMonthChange} currentDate={currentDate} marks={mark} hideTime={hideTime} time="06:30"  renderExtra={<View>343434</View>} />
+        <View className="doc-body">
+          <View className="panel">
+            <View className="panel__title">一般案例</View>
+            <View className="panel__content">
+              <AtCalendar
+                collapse={collapse}
+                onSelectDate={this.handleSelectDate}
+                onMonthChange={this.handleMonthChange}
+                currentDate={currentDate}
+                marks={mark}
+                hideTime={hideTime}
+                time="06:30"
+                renderExtra={<View>343434</View>}
+              />
             </View>
-            <Button onClick={this.handleCollapse.bind(this)}>{!collapse ? '折叠' : '展开'}</Button>
+            <Button onClick={this.handleCollapse.bind(this)}>
+              {!collapse ? '折叠' : '展开'}
+            </Button>
           </View>
           {/* skb985J8LEmj5VPyu3N+9J+8suw= */}
           {/* <View className='panel'>
@@ -199,8 +222,8 @@ export default class Index extends Component {
               </View>
             </View>
           </View>*/}
-        </View> 
+        </View>
       </View>
-    )
+    );
   }
 }

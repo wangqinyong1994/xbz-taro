@@ -5,6 +5,8 @@ export default Calendar
 declare namespace Calendar {
   export type DateArg = string | number | Date
 
+  export type MarkStatus = boolean
+
   export type classNameType =
     | string
     | Array<string>
@@ -12,6 +14,8 @@ declare namespace Calendar {
 
   export interface Mark {
     value: DateArg
+    normal: MarkStatus
+    dotColor?: string
   }
 
   export interface Item {
