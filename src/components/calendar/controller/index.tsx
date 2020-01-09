@@ -104,7 +104,7 @@ export default class AtCalendarController extends Taro.Component<Props, State> {
           end={maxDateValue}
           start={minDateValue}
           onChange={this.props.onSelectDate}
-          value={dayjsDate.format('YYYY-MM')}
+          value={dayjsDate.format('YYYY-MM-DD')}
         >
           <Text className='controller__info'>
             {dayjsDate.format(monthFormat)}
