@@ -162,6 +162,19 @@
       font-size: 30px;
       margin-left: 40px;
       margin-right: 40px;
+      position: relative;
+
+      &::after {
+        content: '';
+        width: 0;
+        height: 0;
+        position: absolute;
+        border: 10px solid;
+        border-color: #333 transparent transparent;
+        right: -26px;
+        top: calc(50% + 5px);
+        transform: translateY(-50%);
+      }
     }
   }
 }
